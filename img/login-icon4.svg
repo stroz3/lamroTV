@@ -1,0 +1,9 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 10V20M4 20V30M4 20H15.2354M15.2354 20V10M15.2354 20V30M23.1596 20V10C29.5798 10 36 10 36 20C36 30 29.5798 30 23.1596 30V20Z" stroke="url(#paint0_radial_2003_1077)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<radialGradient id="paint0_radial_2003_1077" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(26.5714 11.6071) rotate(118.072) scale(22.4643 50.8527)">
+<stop stop-color="#81BE70"/>
+<stop offset="1" stop-color="#52A564"/>
+</radialGradient>
+</defs>
+</svg>

@@ -1,0 +1,19 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_58_9937)">
+<mask id="mask0_58_9937" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+<path d="M15 15V1.00005H1V15H15Z" fill="white" stroke="white" stroke-width="2"/>
+</mask>
+<g mask="url(#mask0_58_9937)">
+<path d="M7.99963 4.79999V8L10.133 10.1334M1.59961 8H2.66627M1.59961 8C1.59961 11.5346 4.465 14.4 7.99963 14.4M1.59961 8C1.59961 4.46537 4.465 1.59998 7.99963 1.59998M13.333 8H14.3997M14.3997 8C14.3997 11.5346 11.5343 14.4 7.99963 14.4M14.3997 8C14.3997 4.46537 11.5343 1.59998 7.99963 1.59998M7.99963 14.4V13.3334M7.99963 2.66664V1.59998" stroke="url(#paint0_radial_58_9937)" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_58_9937" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(10.6282 13.3714) rotate(-108.435) scale(13.372 21.8703)">
+<stop stop-color="#81BE70"/>
+<stop offset="1" stop-color="#52A564"/>
+</radialGradient>
+<clipPath id="clip0_58_9937">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
