@@ -2451,6 +2451,7 @@ button {
   max-height: calc(100vh - 150px);
   scrollbar-width: none;
   overflow-x: hidden;
+  display: none;
 }
 .tv-page .tv-page-menu::-webkit-scrollbar {
   width: 0;
