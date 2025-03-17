@@ -152,8 +152,6 @@ $(document).ready(function () {
 			}
 		});
 
-	
-
 	$('.toggle-switcher').on('click', function () {
 			closeTabMenu();
 			$(this).fadeOut();
@@ -202,6 +200,38 @@ $(document).ready(function () {
 		fade: true,
 		arrows: false
 	})
+
+
+	let toggle = false; 
+
+	$('.user-link').click(() => {
+		if (!toggle) {
+			$('.profile-block')
+				.stop(true, true)
+				.css({ pointerEvents: "auto" }) 
+				.animate(
+					{
+						opacity: 1,
+						top: "70px"
+					},
+					400
+				);
+		} else {
+			$('.profile-block')
+				.stop(true, true)
+				.animate(
+					{
+						opacity: 0,
+						top: "50px"
+					},
+					400,
+					function () {
+						$(this).css({ pointerEvents: "none" }); 
+					}
+				);
+		}
+		toggle = !toggle;
+	});
 
 });
 
