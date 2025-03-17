@@ -1,3 +1,44 @@
+const indexCatalogBlockSlider = {
+	slidesToShow: 5,
+	infinite: true,
+	responsive: [
+		{
+		breakpoint: 1430,
+		settings: {
+			slidesToShow: 5
+		}
+		},
+		{
+			breakpoint: 1200,
+			settings: {
+			slidesToShow: 4
+			}
+		},
+		{
+		breakpoint: 992,
+		settings: {
+			centerMode: true,
+			slidesToShow: 3
+		}
+		},
+		{
+		breakpoint: 768,
+		settings: {
+			centerMode: true,
+			slidesToShow: 2
+		}
+		},
+		{
+		breakpoint: 576,
+		settings: {
+			centerMode: true,
+			slidesToShow: 1
+		}
+		}
+	]
+}
+
+
 $(document).on('mouseup', function (e){
     var div = $(".login-page .content form .field .countries .select");
     if (!div.is(e.target) 
@@ -53,18 +94,7 @@ $(document).on('mouseup', function (e){
     }
 });
 
-$(document).ready(function () {
-	$(".toggle-button").click(function () {		
-		const switchSlider = $(".switch-slider");
-		switchSlider.toggleClass("active");
-		
-	  if (switchSlider.hasClass("active")) {
-		$(".list").addClass("wide-list");
-	  } else {
-		$(".list").removeClass("wide-list");
-	  }
-	});
-  });
+$(document).ready();
   
 
   $(document).ready(function () {
@@ -77,27 +107,55 @@ $(document).ready(function () {
 $(document).ready(function () {
 	const menu = $('.tv-page-menu');
 
-	$('.tv-page .item').on('click', function (e) {
-            $("#list-select li p, #list-select li span").fadeOut('fast', function () {
-				$("#nav-select").addClass('small');
-                $('.tv-page .wrap-container-list').addClass('wideList');
-				menu.fadeIn();
-				setTimeout(() => {
-					menu.removeClass('hidden');
-					$('.toggle-switcher').fadeIn();
-				}, 350);
-            });
-	});
+	function closeTabMenu() {
+		menu.addClass('hidden');
+		menu.fadeOut()
+		$('.wrap-container-list').removeClass('wideList');
+		$("#nav-select").removeClass('small');
+		$('.tv-page .wrap-container-list').removeClass('wideList');
+		setTimeout(()=>{
+			$("#list-select li p, #list-select li span").fadeIn('fast');
+		},150)
+	}
+
+
+	$(
+		function () {
+			$(".toggle-button").click(function () {		
+				const switchSlider = $(".switch-slider");
+				switchSlider.toggleClass("active");
+				closeTabMenu();
+				$(".toggle-switcher").fadeOut();
+			  if (switchSlider.hasClass("active")) {
+				$(".list").addClass("wide-list");
+			  } else {
+				$(".list").removeClass("wide-list");
+			  }
+			});
+		  }
+	)
+
+		$('.tv-page .item').on('click', function (e) {
+			if(!$('.list').hasClass('wide-list') && window.matchMedia("(min-width: 1200px)").matches){
+				$("#list-select li p, #list-select li span").fadeOut('fast', function () {
+					$("#nav-select").addClass('small');
+					$('.tv-page .wrap-container-list').addClass('wideList');
+					menu.fadeIn();
+					setTimeout(() => {
+						menu.removeClass('hidden');
+						$('.toggle-switcher').fadeIn().css("display", "flex");
+					}, 350);
+				});
+			}
+			else{
+				$(location).attr('href', '/tv2.html');
+			}
+		});
+
+	
 
 	$('.toggle-switcher').on('click', function () {
-			menu.addClass('hidden');
-			menu.fadeOut()
-			$('.wrap-container-list').removeClass('wideList');
-			$("#nav-select").removeClass('small');
-			$('.tv-page .wrap-container-list').removeClass('wideList');
-			setTimeout(()=>{
-				$("#list-select li p, #list-select li span").fadeIn('fast');
-			},150)
+			closeTabMenu();
 			$(this).fadeOut();
 	});
 
@@ -117,7 +175,6 @@ $(document).ready(function () {
 		for (let i = 1; i <= daysInMonth; i++) {
 			const date = new Date(currentYear, currentMonth, i); // Создаем дату для каждого дня
 			const weekday = daysOfWeek[date.getDay()]; // Ищем день недели
-			console.log(date);
 			
 			// Добавляем элемент в слайдер
 			slider.append(
@@ -132,15 +189,19 @@ $(document).ready(function () {
 		centerMode: true,
 		initialSlide: 5,
 		slidesToScroll: 1,
+		asNavFor: '.content-slider',
 		infinite: true,
 		prevArrow: '<button type="button" class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.125 6.06061L8.18561 10L12.125 13.9394" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
 		nextArrow: '<button type="button" class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.875 6.06061L11.8144 10L7.875 13.9394" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
 	});
-
-	
-
-	
 	}
+	$('.content-slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		asNavFor: ".date-slider",
+		fade: true,
+		arrows: false
+	})
 
 });
 
@@ -160,11 +221,7 @@ $(function(){
 		  } else {
 			slider.removeClass('grid-view');
 			wrapperSlide.removeClass('wrap')
-			slider.slick({
-				slidesToShow: 5,
-				adaptiveWidth: true,
-				infinite: true,
-			});
+			slider.slick(indexCatalogBlockSlider);
 		  }
 	});
 	$('.index-slider-nav .select .link').click(function() {
@@ -178,11 +235,19 @@ $(function(){
 	$('.fixed-video-block .close').click(function() {
 		$('.fixed-video-block').fadeOut();
 	});
-	$('.menubg').click(function() {
+
+	function closeMobMeny(){
 		$('.new-header .menu-button').removeClass('active');
 		$('.menubg').fadeOut();
 		$('.mobile-menu').removeClass('opened');
+	}
+
+	$('.menubg').click(function() {
+		closeMobMeny();
 	});
+	$('#closeMobile').click(function() {
+		closeMobMeny();
+	})
 	$('.new-header .menu-button').click(function() {
 		$('.new-header .menu-button').addClass('active');
 		$('.menubg').fadeIn();
@@ -220,14 +285,12 @@ $(function(){
 	$('.index-page-slider').slick({
 		dots: true,
 		autoplay: true,
+		arrows: false,
+		swipe: false,
 		autoplaySpeed: 5000,
 		adaptiveHeight: true
 	});
-	$('.index-catalog-block .list').slick({
-		slidesToShow: 5,
-		adaptiveWidth: true,
-		infinite: true,
-	});
+	$('.index-catalog-block .list').slick(indexCatalogBlockSlider);
 	$('.slider-for').slick({
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
@@ -269,8 +332,16 @@ $(function(){
 	      {
 	        breakpoint: 576,
 	        settings: {
-	          slidesToShow: 5,
-			  slidesToScroll: 5,
+	          slidesToShow: 4,
+			  slidesToScroll: 4,
+	          arrows: false
+	        }
+	      },
+	      {
+	        breakpoint: 425,
+	        settings: {
+	          slidesToShow: 3,
+			  slidesToScroll: 3,
 	          arrows: false
 	        }
 	      }
