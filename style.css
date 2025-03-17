@@ -3149,6 +3149,9 @@ button {
     mask-image: linear-gradient(to bottom, black 66%, transparent 90%);
     -webkit-mask-composite: destination-in;
   }
+  .tv-page .tv-page-menu {
+    width: calc(33% - 20px);
+  }
 }
 @media (max-width: 1430px) {
   .wrap {

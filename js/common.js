@@ -180,7 +180,7 @@ $(document).ready(function () {
 			);
 		  }
 		  
-	// Инициализация Slick-слайдера
+	
 	$('.date-slider').slick({
 		slidesToShow: 8,
 		focusOnSelect: true,
@@ -191,6 +191,14 @@ $(document).ready(function () {
 		infinite: true,
 		prevArrow: '<button type="button" class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.125 6.06061L8.18561 10L12.125 13.9394" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
 		nextArrow: '<button type="button" class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.875 6.06061L11.8144 10L7.875 13.9394" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+		responsive: [
+			{
+			  breakpoint: 1430,
+			  settings: {
+				slidesToShow: 4
+			  }
+			}
+		  ]
 	});
 	}
 	$('.content-slider').slick({
