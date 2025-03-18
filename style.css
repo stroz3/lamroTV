@@ -2058,6 +2058,10 @@ button {
   width: 59%;
 }
 .tv-page .video {
+  position: sticky;
+  top: 120px;
+  overflow-y: auto;
+  align-self: flex-start;
   width: 39%;
 }
 .tv-page .video .player {
@@ -2442,7 +2446,7 @@ button {
 }
 .tv-page .tv-page-menu {
   transition: all 0.4s ease;
-  transform: translateX(0);
+  transform: translateX(300%);
   width: calc(35% - 20px);
   position: sticky;
   align-self: flex-start;
@@ -2451,7 +2455,8 @@ button {
   max-height: calc(100vh - 150px);
   scrollbar-width: none;
   overflow-x: hidden;
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 .tv-page .tv-page-menu::-webkit-scrollbar {
   width: 0;
@@ -2492,10 +2497,17 @@ button {
 .tv-page .wide-list .item .info {
   width: 100%;
 }
+.slider-for .slick-list {
+  overflow: visible;
+}
 .date-slider {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+  position: sticky !important;
+  top: 0;
+  z-index: 9;
+  background: #000F0F;
 }
 .date-slider .date {
   text-align: center;
@@ -2546,10 +2558,10 @@ button {
   bottom: 0;
 }
 .slick-prev {
-  left: -20px;
+  left: -18px;
 }
 .slick-next {
-  right: -20px;
+  right: -18px;
 }
 .toggle-container {
   display: flex;

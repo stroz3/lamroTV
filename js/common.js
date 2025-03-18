@@ -109,7 +109,8 @@ $(document).ready(function () {
 
 	function closeTabMenu() {
 		menu.addClass('hidden');
-		menu.fadeOut()
+		menu.css({ pointerEvents: "none", opacity: '0', transform: 'translateX(300%)' })
+		// .fadeOut()
 		$('.wrap-container-list').removeClass('wideList');
 		$("#nav-select").removeClass('small');
 		$('.tv-page .wrap-container-list').removeClass('wideList');
@@ -140,7 +141,9 @@ $(document).ready(function () {
 				$("#list-select li p, #list-select li span").fadeOut('fast', function () {
 					$("#nav-select").addClass('small');
 					$('.tv-page .wrap-container-list').addClass('wideList');
-					menu.fadeIn();
+					menu
+					// .fadeIn()
+					.css({ pointerEvents: "auto", opacity: '1', transform: 'translateX(0)' });
 					setTimeout(() => {
 						menu.removeClass('hidden');
 						$('.toggle-switcher').fadeIn().css("display", "flex");
@@ -158,29 +161,31 @@ $(document).ready(function () {
 	});
 
 
-	generateDates(); // Генерация дат
+	// generateDates(); // Генерация дат
 
-	function generateDates() {
-		const daysOfWeek = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
-		const today = new Date();
-		const currentMonth = today.getMonth(); 
-		const currentYear = today.getFullYear(); 
-		const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate(); 
+	// function generateDates() {
+	// 	const daysOfWeek = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
+	// 	const today = new Date();
+	// 	const currentMonth = today.getMonth(); 
+	// 	const currentYear = today.getFullYear(); 
+	// 	const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate(); 
 	
-		const slider = $('.date-slider');
-		slider.empty(); // Очистка содержимого
+	// 	const slider = $('.date-slider');
+	// 	slider.empty(); // Очистка содержимого
 	
-		for (let i = 1; i <= daysInMonth; i++) {
-			const date = new Date(currentYear, currentMonth, i); // Создаем дату для каждого дня
-			const weekday = daysOfWeek[date.getDay()]; // Ищем день недели
+	// 	for (let i = 1; i <= daysInMonth; i++) {
+	// 		const date = new Date(currentYear, currentMonth, i); // Создаем дату для каждого дня
+	// 		const weekday = daysOfWeek[date.getDay()]; // Ищем день недели
 			
-			// Добавляем элемент в слайдер
-			slider.append(
-			  `<div class="date" data-date="${i}">${weekday}<br>${i}</div>`
-			);
-		  }
-		  
+	// 		// Добавляем элемент в слайдер
+	// 		slider.append(
+			//   `<div class="date" data-date="${i}">${weekday}<br>${i}</div>`
+	// 		);
+	// 	  }
 	
+	
+	// }
+
 	$('.date-slider').slick({
 		slidesToShow: 8,
 		focusOnSelect: true,
@@ -200,7 +205,8 @@ $(document).ready(function () {
 			}
 		  ]
 	});
-	}
+
+
 	$('.content-slider').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
