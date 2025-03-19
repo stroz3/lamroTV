@@ -748,6 +748,7 @@ button {
 }
 .index-page-slider .item .wrap {
   position: relative;
+  margin-top: 60px;
 }
 .index-page-slider .item .item-gradient {
   position: absolute;
@@ -872,7 +873,10 @@ button {
 .slider-cart {
   position: absolute;
   right: 0;
-  top: -45%;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
   width: 498px;
   height: 760px;
 }
@@ -1167,7 +1171,12 @@ button {
 }
 .index-catalog-block .list .slick-slide.small {
   max-height: 437px;
+  height: 437px;
   max-width: 280px;
+}
+.index-catalog-block .list .slick-slide.small .image {
+  width: 100%;
+  height: 100%;
 }
 .index-catalog-block .list .slick-prev {
   position: absolute;
@@ -1925,6 +1934,12 @@ button {
 }
 .tv-page .slider-nav {
   padding: 0 40px;
+  z-index: 9;
+  position: sticky;
+  top: 110px;
+  background-color: rgba(2, 23, 22, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
   margin-bottom: 24px;
 }
 .tv-page .slider-nav .slick-prev,
@@ -2059,7 +2074,7 @@ button {
 }
 .tv-page .video {
   position: sticky;
-  top: 120px;
+  top: 180px;
   overflow-y: auto;
   align-self: flex-start;
   width: 39%;
@@ -2477,7 +2492,7 @@ button {
 }
 .tv-page .wide-list .item .image {
   width: 100%;
-  height: 240px;
+  height: 100%;
 }
 .tv-page .wide-list .item .image .wide-platform {
   display: flex;
@@ -3116,6 +3131,148 @@ button {
   object-fit: cover;
   border-radius: 8px;
 }
+.item-loader {
+  width: 100%;
+}
+.item-loader .movie--isloading {
+  display: flex;
+  height: 173px;
+  width: 100%;
+}
+.item-loader .loading-image {
+  width: 280px;
+}
+.item-loader .movie--isloading .loading-content .loading-logo {
+  width: 20%;
+}
+.item-wide-loader {
+  width: calc(33.33% - 20px);
+}
+.item-wide-loader .movie--isloading {
+  flex-direction: column;
+  height: auto;
+}
+.item-wide-loader .movie--isloading .loading-image {
+  height: 240px;
+  width: 100%;
+}
+.item-wide-loader .movie--isloading .loading-content {
+  padding: 15px 0;
+}
+.item-wide-loader .movie--isloading .loading-content .loading-main-text,
+.item-wide-loader .movie--isloading .loading-content .loading-logo {
+  height: 22px;
+}
+.item-wide-loader .movie--isloading .loading-content .loading-main-text {
+  width: 47%;
+}
+.item-wide-loader .movie--isloading .loading-content .loading-logo {
+  width: 30%;
+}
+.movie--isloading {
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.movie--isloading .loading-image {
+  background-image: -webkit-linear-gradient(90deg, #142525 16.54%, #182F2F 65.37%, #142525 90.31%);
+  background-image: -o-linear-gradient(90deg, #142525 16.54%, #182F2F 65.37%, #142525 90.31%);
+  background-image: linear-gradient(90deg, #142525 16.54%, #182F2F 65.37%, #142525 90.31%);
+  background-size: 250px;
+  border-radius: 8px;
+  -webkit-animation: shine-loading-image 2s infinite ease-out;
+  animation: shine-loading-image 2s infinite ease-out;
+}
+.movie--isloading .loading-content {
+  padding: 15px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.movie--isloading .loading-content .loading-text-container {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+}
+.movie--isloading .loading-content .loading-main-text {
+  height: 49px;
+  margin-bottom: 10px;
+  background: #ececec;
+  background-image: -webkit-linear-gradient(90deg, #142525 16.54%, #182F2F 65.37%, #142525 90.31%);
+  background-image: -o-linear-gradient(90deg, #142525 16.54%, #182F2F 65.37%, #142525 90.31%);
+  background-image: linear-gradient(90deg, #142525 16.54%, #182F2F 65.37%, #142525 90.31%);
+  border-radius: 8px;
+  background-size: 250px;
+  border-radius: 10px;
+  -webkit-animation: shine-loading-container-items 2s infinite ease-out;
+  animation: shine-loading-container-items 2s infinite ease-out;
+}
+.movie--isloading .loading-content .loading-sub-text {
+  height: 24px;
+  background: #ececec;
+  background-image: -webkit-linear-gradient(90deg, #142525 16.54%, #182F2F 65.37%, #142525 90.31%);
+  background-image: -o-linear-gradient(90deg, #142525 16.54%, #182F2F 65.37%, #142525 90.31%);
+  background-image: linear-gradient(90deg, #142525 16.54%, #182F2F 65.37%, #142525 90.31%);
+  border-radius: 8px;
+  background-size: 250px;
+  border-radius: 10px;
+  -webkit-animation: shine-loading-container-items 2s infinite ease-out;
+  animation: shine-loading-container-items 2s infinite ease-out;
+}
+.movie--isloading .loading-content .loading-btn {
+  width: 60px;
+  height: 25px;
+  background: #ececec;
+  background-image: -webkit-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: -o-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: linear-gradient(90deg, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-size: 250px;
+  border-radius: 3px;
+  -webkit-animation: shine-loading-container-items 2s infinite ease-out;
+  animation: shine-loading-container-items 2s infinite ease-out;
+}
+@-webkit-keyframes shine-loading-image {
+  0% {
+    background-position: -32px;
+  }
+  40%,
+  100% {
+    background-position: 208px;
+  }
+}
+@keyframes shine-loading-image {
+  0% {
+    background-position: -32px;
+  }
+  40%,
+  100% {
+    background-position: 208px;
+  }
+}
+@-webkit-keyframes shine-loading-container-items {
+  0% {
+    background-position: -100px;
+  }
+  40%,
+  100% {
+    background-position: 140px;
+  }
+}
+@keyframes shine-loading-container-items {
+  0% {
+    background-position: -100px;
+  }
+  40%,
+  100% {
+    background-position: 140px;
+  }
+}
 @media (max-width: 1810px) {
   .wrap {
     width: 1600px;
@@ -3394,6 +3551,9 @@ button {
   .slider-nav-page .index-page-slider .slick-list {
     height: 950px !important;
   }
+  .item-wide-loader {
+    width: calc(50% - 20px);
+  }
 }
 @media (max-width: 767px) {
   .wrap {
@@ -3538,6 +3698,18 @@ button {
   }
   .slider-nav-page .index-page-slider .slick-dots {
     top: 63%;
+  }
+  .item-loader .movie--isloading .loading-image {
+    display: none;
+  }
+  .item-wide-loader .movie--isloading .loading-image {
+    display: block;
+  }
+  .item-wide-loader {
+    width: 100%;
+  }
+  .item-loader .movie--isloading .loading-content .loading-logo {
+    width: 40%;
   }
 }
 @media (max-width: 575px) {
@@ -3777,5 +3949,8 @@ button {
   }
   .index-page-slider {
     margin-bottom: 100px;
+  }
+  .movie--isloading .loading-content {
+    padding: 15px 0;
   }
 }
