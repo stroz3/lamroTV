@@ -160,9 +160,6 @@ $(document).ready(function () {
 			$(this).fadeOut();
 	});
 
-
-	
-
 	$('.date-slider').slick({
 		slidesToShow: 8,
 		focusOnSelect: true,
@@ -305,7 +302,7 @@ $(function(){
 	});
 	$('.index-page-slider').slick({
 		dots: true,
-		// autoplay: true,
+		autoplay: true,
 		arrows: false,
 		swipe: false,
 		autoplaySpeed: 5000,
