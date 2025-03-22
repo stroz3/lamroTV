@@ -54,6 +54,13 @@
 .oh {overflow: hidden;}
 .pen {pointer-events: none;}
 .tb {transition: box-shadow 0.4s ease;}
+.scroll0{
+	-ms-overflow-style: none; 
+	scrollbar-width: none; 
+	&::-webkit-scrollbar {
+		display: none;
+		}
+}
 
 .cor0 (@radius: 0px) {
   -webkit-border-radius: @radius;
@@ -575,6 +582,7 @@ button{
 .index-page-slider {
 	opacity: 0;
 	transition: opacity 0.3s ease;
+	height: auto;
 	margin-bottom: 50px;
 	.item {
 		height: 900px;
@@ -595,6 +603,10 @@ button{
 			.tags {
 				font-size: 0;
 				padding-bottom: 30px;
+				display: flex;
+				overflow-x: auto;
+				.scroll0;
+				width: 100%;
 				span {
 					.in;
 					margin: 0 10px 10px 0;
@@ -1811,7 +1823,8 @@ button{
 	}
 	.slider-nav {
 		opacity: 0;
-		transition: opacity 0.3s ease;
+		max-height: 60px;
+		transition: opacity 0.3s ease, height 0.3s ease;
 		padding: 0 40px;
 		z-index: 9;
 		// position: sticky;
@@ -2165,11 +2178,7 @@ button{
 			width: 59%;
 			height: 100%;
 			overflow-y: auto;
-			-ms-overflow-style: none; 
-    		scrollbar-width: none; 
-			&::-webkit-scrollbar {
-				display: none;
-			  }
+			.scroll0;
 		}
 		
 	}
@@ -2291,11 +2300,7 @@ button{
 			line-height: 20px;
 		}
 		.tags {
-			-ms-overflow-style: none; 
-    		scrollbar-width: none; 
-			&::-webkit-scrollbar {
-				display: none;
-			  }
+			.scroll0;
 			overflow-x: scroll;
 			display: flex;
 			font-size: 0;
@@ -3233,7 +3238,6 @@ button{
 	.wrap {width: 970px;}
 	.index-page-slider .slick-dots {width: 970px;}
 	.index-page-slider .item .info h3 {font-size: 50px; line-height: 1.2; padding-top: 400px;}
-	.index-page-slider .item {height: 700px;}
 	.serial-page .main-block {padding: 120px 0 50px;}
 	.serial-page .main-block .navi {margin-bottom: 400px;}
 	.serial-page .main-block h1 {font-size: 50px; line-height: 1.2;}
@@ -3272,11 +3276,11 @@ button{
 		height: calc(100vh - 100px);
 		flex-direction: column;
 	}
-	.index-page-slider{height: 900px;}
+	// .index-page-slider{height: 900px;}
 	.index-page-slider .item{height: 900px;}
 	.index-page-slider .slick-dots {
 		left: 0%;
-        top: 53%;
+        top: 57%;
         width: 970px;
         height: 20px;
         right: 0;
@@ -3289,18 +3293,16 @@ button{
 	}
 	.slider-cart{
 		left: 0;
-		top: 50px !important;
+		top: -50px !important;
 		margin-left: auto;
 		margin-right: auto;
+		margin-top: 0;
 		img{
 			-webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 85%);
 			mask-image: linear-gradient(to bottom, black 50%, transparent 85%);
 		}
 	}
-	.index-page-slider .slider-cart{
-		top: 0px !important;
-		margin-top: 0;
-	}
+	
 	.slider-cart .slider-cart-wrapper{
 		left: -100%;
 	}
@@ -3382,7 +3384,7 @@ button{
 	.new-header nav {margin-top: 10px;}
 	.new-header .user-link {margin-top: 2px;}
 	.new-header nav ul li ul li a {font-size: 16px; line-height: 18px;}
-	.index-page-slider .item {height: auto;}
+	.index-page-slider .item {height: 1000px;}
 	.index-page-slider .item .info {.rel; .auto; .tn; .wa; padding: 150px 0 30px 0;}
 	.index-page-slider .item .button {.rel; .auto; .tn; .wa; padding: 0 0 60px 0; .bl;}
 	.index-page-slider .item .button button {.w100; .tac;}
@@ -3423,6 +3425,7 @@ button{
 	.index-page-slider .slick-dots{
 		width: 556px;	
 		text-align: left;
+		top: 54%;
 	}
 	.index-page-slider .item .info h3{
 		font-size: 34px;
@@ -3472,7 +3475,6 @@ button{
 	.new-header nav {.dn;}
 	.mobile-menu.opened {left: 0;}
 	.new-header .menu-button {.bl;}
-	.index-page-slider .item .info h3 {font-size: 36px;}
 	.index-page-slider .item .info {padding: 130px 0 20px 0;}
 	.index-page-slider .item .info .tags span {font-size: 18px; line-height: 24px;}
 	.index-page-slider .item .info p {font-size: 18px; line-height: 24px;}
@@ -3545,7 +3547,19 @@ button{
 			margin-bottom: 140px;
 	}
 	.index-page-slider {
-		margin-bottom: 100px;
+		margin-bottom: 30px;
+		
+	}
+	.index-page-slider .slick-dots{
+		top: 49%;
+	}
+	.index-page-slider .item{
+		height: 1100px;
+		display: flex !important;
+		flex-direction: column;
+	}
+	.index-page-slider .item .info{
+		flex: 1;
 	}
 	.movie--isloading .loading-content{
 		padding: 15px 0;
