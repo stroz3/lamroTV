@@ -263,6 +263,7 @@ body {
   /* Для Firefox: тонкий скролл */
   scrollbar-color: #52A564 #2B2B2B;
   /* Цвет ползунка и фона дорожки */
+  background-color: #000F0F;
 }
 /* Для браузеров, поддерживающих Webkit (Chrome, Opera, Edge, Safari) */
 ::-webkit-scrollbar {
@@ -692,6 +693,8 @@ button {
   box-shadow: 0px 0px 22.8px 0px rgba(164, 213, 161, 0.6);
 }
 .index-page-slider {
+  opacity: 0;
+  transition: opacity 0.3s ease;
   margin-bottom: 50px;
 }
 .index-page-slider .item {
@@ -1061,6 +1064,8 @@ button {
   right: 0;
 }
 .index-catalog-block .list {
+  transition: opacity 0.3s ease;
+  opacity: 0;
   width: calc(50vw + 50%);
 }
 .index-catalog-block .list .item {
@@ -1106,6 +1111,7 @@ button {
 .index-catalog-block .list .item .image {
   width: 100%;
   border-radius: 8px;
+  height: 100%;
 }
 .index-catalog-block .list .item .player {
   border-radius: 8px;
@@ -1912,6 +1918,7 @@ button {
 }
 .tv-page {
   padding: 120px 0 60px;
+  overflow: hidden;
 }
 .tv-page .navi {
   margin-bottom: 50px;
@@ -1933,12 +1940,10 @@ button {
   background: url('img/navi.svg');
 }
 .tv-page .slider-nav {
+  opacity: 0;
+  transition: opacity 0.3s ease;
   padding: 0 40px;
   z-index: 9;
-  position: sticky;
-  top: 110px;
-  background-color: rgba(2, 23, 22, 0.8);
-  backdrop-filter: blur(20px);
   border-radius: 20px;
   margin-bottom: 24px;
 }
@@ -2071,10 +2076,9 @@ button {
 }
 .tv-page .wrap-container-list.wideList {
   width: 59%;
+  overflow-y: auto;
 }
 .tv-page .video {
-  position: sticky;
-  top: 180px;
   overflow-y: auto;
   align-self: flex-start;
   width: 39%;
@@ -2283,6 +2287,13 @@ button {
 }
 .tv-page .list.small {
   width: 59%;
+  height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tv-page .list.small::-webkit-scrollbar {
+  display: none;
 }
 .tv-page .item {
   padding: 10px;
@@ -2514,6 +2525,9 @@ button {
 }
 .slider-for .slick-list {
   overflow: visible;
+}
+.flex-slider-for {
+  height: calc(100vh - 276px);
 }
 .date-slider {
   width: 95%;
@@ -3409,6 +3423,10 @@ button {
   .tv-page nav ul li a.active svg path {
     stroke: white ;
   }
+  .flex-slider-for {
+    height: calc(100vh - 100px);
+    flex-direction: column;
+  }
   .index-page-slider {
     height: 900px;
   }
@@ -3440,6 +3458,7 @@ button {
   }
   .index-page-slider .slider-cart {
     top: 0px !important;
+    margin-top: 0;
   }
   .slider-cart .slider-cart-wrapper {
     left: -100%;
@@ -3463,10 +3482,11 @@ button {
   }
   .tv-page .video {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .tv-page .list.small {
     width: 100%;
+    flex: 1;
   }
   .index-slider-nav .navi {
     margin-bottom: 20px;

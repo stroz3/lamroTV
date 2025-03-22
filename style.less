@@ -164,7 +164,7 @@ body, html{
 body {
 	scrollbar-width: thin; /* Для Firefox: тонкий скролл */
 	scrollbar-color: #52A564 #2B2B2B; /* Цвет ползунка и фона дорожки */
-	
+	background-color: #000F0F;
 }
 
 /* Для браузеров, поддерживающих Webkit (Chrome, Opera, Edge, Safari) */
@@ -573,6 +573,8 @@ button{
 }
 
 .index-page-slider {
+	opacity: 0;
+	transition: opacity 0.3s ease;
 	margin-bottom: 50px;
 	.item {
 		height: 900px;
@@ -934,6 +936,8 @@ button{
 		}
 	}
 	.list {
+		transition: opacity 0.3s ease;
+		opacity: 0;
 		width: calc(~"50vw + 50%");
 		.item {
 			width: 340px;
@@ -976,6 +980,7 @@ button{
 			.image {
 				.w100;
 				border-radius: 8px;
+				height: 100%;
 			}
 			.player {
 				border-radius: 8px;
@@ -1784,6 +1789,7 @@ button{
 
 .tv-page {
 	padding: 120px 0 60px;
+	overflow: hidden;
 	.navi {
 		margin-bottom: 50px;
 		color: rgb(255, 255, 255);
@@ -1804,12 +1810,12 @@ button{
 		}
 	}
 	.slider-nav {
+		opacity: 0;
+		transition: opacity 0.3s ease;
 		padding: 0 40px;
 		z-index: 9;
-		position: sticky;
-		top: 110px;
-		background-color: rgba(2,23,22, 0.8);
-		backdrop-filter: blur(20px);
+		// position: sticky;
+		// top: 110px;
 		border-radius: 20px;
 		margin-bottom: 24px;
 		.slick-prev, .slick-next {
@@ -1949,10 +1955,10 @@ button{
 	}
 	.wrap-container-list.wideList{
 		width: 59%;
+		overflow-y: auto;
+
 	}
 	.video {
-		position: sticky;
-		top: 180px;
 		overflow-y: auto;
 		align-self: flex-start;
 		width: 39%;
@@ -2157,6 +2163,13 @@ button{
 	.list {
 		&.small {
 			width: 59%;
+			height: 100%;
+			overflow-y: auto;
+			-ms-overflow-style: none; 
+    		scrollbar-width: none; 
+			&::-webkit-scrollbar {
+				display: none;
+			  }
 		}
 		
 	}
@@ -2377,6 +2390,9 @@ button{
 }
 .slider-for .slick-list{
 	overflow: visible;
+}
+.flex-slider-for{
+	height: calc(100vh - 276px);
 }
 .date-slider{
 	width: 95%;
@@ -3252,6 +3268,10 @@ button{
 			}
 		}
 	}
+	.flex-slider-for{
+		height: calc(100vh - 100px);
+		flex-direction: column;
+	}
 	.index-page-slider{height: 900px;}
 	.index-page-slider .item{height: 900px;}
 	.index-page-slider .slick-dots {
@@ -3279,6 +3299,7 @@ button{
 	}
 	.index-page-slider .slider-cart{
 		top: 0px !important;
+		margin-top: 0;
 	}
 	.slider-cart .slider-cart-wrapper{
 		left: -100%;
@@ -3297,8 +3318,9 @@ button{
 		
 	}
 	.tv-page .list {.w100; justify-content: space-between;}
-	.tv-page .video {.w100; margin-bottom: 30px;}
-	.tv-page .list.small {.w100;}
+	.tv-page .video {.w100; margin-bottom: 20px;}
+	
+	.tv-page .list.small {.w100; flex: 1;}
 	.index-slider-nav .navi {margin-bottom: 20px;}
 	.wish-list-page .list .item {width: 32%;}
 	// .index-catalog-block .list2 .item, .index-catalog-block .list2 .item.small {width: calc(~"25% - 20px");}

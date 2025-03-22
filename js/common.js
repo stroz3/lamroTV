@@ -1,6 +1,8 @@
 const indexCatalogBlockSlider = {
 	slidesToShow: 5,
+	slidesToScroll: 1,
 	infinite: true,
+	lazyLoad: 'ondemand',
 	responsive: [
 		{
 		breakpoint: 1430,
@@ -17,21 +19,21 @@ const indexCatalogBlockSlider = {
 		{
 		breakpoint: 992,
 		settings: {
-			centerMode: true,
+			// centerMode: true,
 			slidesToShow: 3
 		}
 		},
 		{
 		breakpoint: 768,
 		settings: {
-			centerMode: true,
+			// centerMode: true,
 			slidesToShow: 2
 		}
 		},
 		{
 		breakpoint: 576,
 		settings: {
-			centerMode: true,
+			// centerMode: true,
 			slidesToShow: 1
 		}
 		}
@@ -160,6 +162,9 @@ $(document).ready(function () {
 			$(this).fadeOut();
 	});
 
+
+	
+
 	$('.date-slider').slick({
 		slidesToShow: 8,
 		focusOnSelect: true,
@@ -172,7 +177,7 @@ $(document).ready(function () {
 		nextArrow: '<button type="button" class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.875 6.06061L11.8144 10L7.875 13.9394" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
 		responsive: [
 			{
-			  breakpoint: 1430,
+			  breakpoint: 1600,
 			  settings: {
 				slidesToShow: 4
 			  }
@@ -307,8 +312,8 @@ $(function(){
 		swipe: false,
 		autoplaySpeed: 5000,
 		adaptiveHeight: true
-	});
-	$('.index-catalog-block .list').slick(indexCatalogBlockSlider);
+	}).closest('.index-page-slider').css('opacity', '1')
+	$('.index-catalog-block .list').slick(indexCatalogBlockSlider).closest('.index-catalog-block .list').css('opacity', '1');
 	$('.slider-for').slick({
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
@@ -364,5 +369,7 @@ $(function(){
 	        }
 	      }
 	    ]
-	});
+	}).closest('.slider-nav').css('opacity', '1');
 });
+
+
