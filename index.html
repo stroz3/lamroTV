@@ -7,9 +7,10 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="slick.css">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script src="js/common.js"></script>
-	
 </head>
 <body>
 	<div class="menubg"></div>
@@ -306,17 +307,16 @@
 					<span class="item-gradient"></span>
 				</div>
 			</div>
-			<!-- Чтобы дублировать различные слайды, необходимо ставить Id -->
-			<div class="index-catalog-block" id="slider1">
+			<div class="index-catalog-block" >
 				<div class="wrap">
 					<div class="flex">
 						<h2>Основано на ваших интересах</h2>
 						<button class="top-button">Показать все <i></i></button>
 					</div>			
 				</div>
-				<div class="slider-wrapp">
-					<div class="list">
-						<div class="item">
+				<div class="swiper slider-wrapp">
+					<div class="swiper-wrapper list">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item4.png" class="image">
 								<a class="play"></a>
@@ -334,7 +334,7 @@
 								1 сезон | 12 серия
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item5.png" class="image">
 								<a class="play"></a>
@@ -352,7 +352,7 @@
 								35:23
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item6.png" class="image">
 								<a class="play"></a>
@@ -367,7 +367,7 @@
 								1 сезон | 12 серия
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item4.png" class="image">
 								<a class="play"></a>
@@ -385,7 +385,7 @@
 								1 сезон | 12 серия
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item5.png" class="image">
 								<a class="play"></a>
@@ -403,7 +403,7 @@
 								35:23
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item6.png" class="image">
 								<a class="play"></a>
@@ -418,7 +418,7 @@
 								1 сезон | 12 серия
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item4.png" class="image">
 								<a class="play"></a>
@@ -436,7 +436,7 @@
 								1 сезон | 12 серия
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item5.png" class="image">
 								<a class="play"></a>
@@ -454,7 +454,7 @@
 								35:23
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item6.png" class="image">
 								<a class="play"></a>
@@ -469,7 +469,7 @@
 								1 сезон | 12 серия
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item4.png" class="image">
 								<a class="play"></a>
@@ -487,7 +487,7 @@
 								1 сезон | 12 серия
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item5.png" class="image">
 								<a class="play"></a>
@@ -505,7 +505,7 @@
 								35:23
 							</div>
 						</div>
-						<div class="item">
+						<div class="swiper-slide item">
 							<div class="player">
 								<img src="img/item6.png" class="image">
 								<a class="play"></a>
@@ -521,662 +521,373 @@
 							</div>
 						</div>
 					</div>
+					<div class="slick-next"></div>
+					<div class="slick-prev"></div>
 				</div>
 			</div>
 			<div class="index-catalog-block" >
 				<div class="wrap">
 					<h2>Продолжить просмотр</h2>
 				</div>
-				<div class="list">
-					<div class="item">
-						<div class="player">
-							<img src="img/item4.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								24 минуты
+				<div class="swiper slider-wrapp">
+					<div class="swiper-wrapper list">
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item4.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									24 минуты
+								</div>
+								<div class="progress">
+									<span style="width: 60%"></span>
+								</div>
 							</div>
-							<div class="progress">
-								<span style="width: 60%"></span>
+							<div class="name">
+								Киберслав: Спящая красавица
+							</div>
+							<div class="season">
+								1 сезон | 12 серия
 							</div>
 						</div>
-						<div class="name">
-							Киберслав: Спящая красавица
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item5.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									1 час 40 минут
+								</div>
+								<div class="progress">
+									<span style="width: 70%"></span>
+								</div>
+							</div>
+							<div class="name">
+								Человек паук
+							</div>
+							<div class="season">
+								35:23
+							</div>
 						</div>
-						<div class="season">
-							1 сезон | 12 серия
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item6.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									12 минут
+								</div>
+							</div>
+							<div class="name">
+								Киберслав: Спящая красавица
+							</div>
+							<div class="season">
+								1 сезон | 12 серия
+							</div>
+						</div>
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item4.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									24 минуты
+								</div>
+								<div class="progress">
+									<span style="width: 60%"></span>
+								</div>
+							</div>
+							<div class="name">
+								Киберслав: Спящая красавица
+							</div>
+							<div class="season">
+								1 сезон | 12 серия
+							</div>
+						</div>
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item5.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									1 час 40 минут
+								</div>
+								<div class="progress">
+									<span style="width: 70%"></span>
+								</div>
+							</div>
+							<div class="name">
+								Человек паук
+							</div>
+							<div class="season">
+								35:23
+							</div>
+						</div>
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item6.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									12 минут
+								</div>
+							</div>
+							<div class="name">
+								Киберслав: Спящая красавица
+							</div>
+							<div class="season">
+								1 сезон | 12 серия
+							</div>
+						</div>
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item4.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									24 минуты
+								</div>
+								<div class="progress">
+									<span style="width: 60%"></span>
+								</div>
+							</div>
+							<div class="name">
+								Киберслав: Спящая красавица
+							</div>
+							<div class="season">
+								1 сезон | 12 серия
+							</div>
+						</div>
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item5.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									1 час 40 минут
+								</div>
+								<div class="progress">
+									<span style="width: 70%"></span>
+								</div>
+							</div>
+							<div class="name">
+								Человек паук
+							</div>
+							<div class="season">
+								35:23
+							</div>
+						</div>
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item6.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									12 минут
+								</div>
+							</div>
+							<div class="name">
+								Киберслав: Спящая красавица
+							</div>
+							<div class="season">
+								1 сезон | 12 серия
+							</div>
+						</div>
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item4.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									24 минуты
+								</div>
+								<div class="progress">
+									<span style="width: 60%"></span>
+								</div>
+							</div>
+							<div class="name">
+								Киберслав: Спящая красавица
+							</div>
+							<div class="season">
+								1 сезон | 12 серия
+							</div>
+						</div>
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item5.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									1 час 40 минут
+								</div>
+								<div class="progress">
+									<span style="width: 70%"></span>
+								</div>
+							</div>
+							<div class="name">
+								Человек паук
+							</div>
+							<div class="season">
+								35:23
+							</div>
+						</div>
+						<div class="swiper-slide item">
+							<div class="player">
+								<img src="img/item6.png" class="image">
+								<a class="play"></a>
+								<div class="time">
+									12 минут
+								</div>
+							</div>
+							<div class="name">
+								Киберслав: Спящая красавица
+							</div>
+							<div class="season">
+								1 сезон | 12 серия
+							</div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item5.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								1 час 40 минут
-							</div>
-							<div class="progress">
-								<span style="width: 70%"></span>
-							</div>
-						</div>
-						<div class="name">
-							Человек паук
-						</div>
-						<div class="season">
-							35:23
-						</div>
-					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item6.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								12 минут
-							</div>
-						</div>
-						<div class="name">
-							Киберслав: Спящая красавица
-						</div>
-						<div class="season">
-							1 сезон | 12 серия
-						</div>
-					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item4.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								24 минуты
-							</div>
-							<div class="progress">
-								<span style="width: 60%"></span>
-							</div>
-						</div>
-						<div class="name">
-							Киберслав: Спящая красавица
-						</div>
-						<div class="season">
-							1 сезон | 12 серия
-						</div>
-					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item5.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								1 час 40 минут
-							</div>
-							<div class="progress">
-								<span style="width: 70%"></span>
-							</div>
-						</div>
-						<div class="name">
-							Человек паук
-						</div>
-						<div class="season">
-							35:23
-						</div>
-					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item6.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								12 минут
-							</div>
-						</div>
-						<div class="name">
-							Киберслав: Спящая красавица
-						</div>
-						<div class="season">
-							1 сезон | 12 серия
-						</div>
-					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item4.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								24 минуты
-							</div>
-							<div class="progress">
-								<span style="width: 60%"></span>
-							</div>
-						</div>
-						<div class="name">
-							Киберслав: Спящая красавица
-						</div>
-						<div class="season">
-							1 сезон | 12 серия
-						</div>
-					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item5.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								1 час 40 минут
-							</div>
-							<div class="progress">
-								<span style="width: 70%"></span>
-							</div>
-						</div>
-						<div class="name">
-							Человек паук
-						</div>
-						<div class="season">
-							35:23
-						</div>
-					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item6.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								12 минут
-							</div>
-						</div>
-						<div class="name">
-							Киберслав: Спящая красавица
-						</div>
-						<div class="season">
-							1 сезон | 12 серия
-						</div>
-					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item4.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								24 минуты
-							</div>
-							<div class="progress">
-								<span style="width: 60%"></span>
-							</div>
-						</div>
-						<div class="name">
-							Киберслав: Спящая красавица
-						</div>
-						<div class="season">
-							1 сезон | 12 серия
-						</div>
-					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item5.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								1 час 40 минут
-							</div>
-							<div class="progress">
-								<span style="width: 70%"></span>
-							</div>
-						</div>
-						<div class="name">
-							Человек паук
-						</div>
-						<div class="season">
-							35:23
-						</div>
-					</div>
-					<div class="item">
-						<div class="player">
-							<img src="img/item6.png" class="image">
-							<a class="play"></a>
-							<div class="time">
-								12 минут
-							</div>
-						</div>
-						<div class="name">
-							Киберслав: Спящая красавица
-						</div>
-						<div class="season">
-							1 сезон | 12 серия
-						</div>
-					</div>
+					<div class="slick-next"></div>
+					<div class="slick-prev"></div>
 				</div>
 			</div>
-			<div class="index-catalog-block" id="slider2">
+			<div class="index-catalog-block" >
 				<div class="wrap">
 					<div class="flex">
 						<h2>Сериалы на любой вкус</h2>
 						<button class="top-button">Показать все <i></i></button>
 					</div>
 				</div>
-				<div class="slider-wrapp" id="slider2">
-					<div class="list">
-						<div class="item hovPlayer small">
+				<div class="swiper slider-wrapp" >
+					<div class="swiper-wrapper list">
+						<div class="swiper-slide item hovPlayer small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item7.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/smallW.jpg" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item9.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item7.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item8.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item9.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item7.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item8.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item9.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item7.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item8.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item9.png" class="image">
 							<a class="play"></a>
 						</div>
 					</div>
+					<div class="slick-next"></div>
+					<div class="slick-prev"></div>
 				</div>
 			</div>
-			<div class="index-catalog-block" id="slider3">
+			<div class="index-catalog-block" >
 				<div class="wrap">
 					<div class="flex">
 						<h2>Топ 20 фильмов</h2>
-						<button class="top-button">Показать все <i></i></button>
 					</div>
 				</div>
-				<div class="slider-wrapp" id="slider3">
-					<div class="list">
-						<div class="item small">
+				<div class="swiper slider-wrapp" >
+					<div class="swiper-wrapper list">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item10.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item11.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item12.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item10.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item11.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item12.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item10.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item11.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item12.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item10.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item11.png" class="image">
 							<a class="play"></a>
 						</div>
-						<div class="item small">
+						<div class="swiper-slide item small">
 							<img src="img/platform.svg" class="platform">
 							<img src="img/item12.png" class="image">
 							<a class="play"></a>
 						</div>
 					</div>
+					<div class="slick-next"></div>
+					<div class="slick-prev"></div>
 				</div>
 			</div>
-			<div class="index-catalog-block">
-				<div class="wrap">
-					<h2>Новинки месяца</h2>
-				</div>
-				<div class="list">
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item13.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item14.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item15.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item13.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item14.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item15.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item13.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item14.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item15.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item13.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item14.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item15.png" class="image">
-						<a class="play"></a>
-					</div>
-				</div>
-			</div>
-			<div class="index-catalog-block">
-				<div class="wrap">
-					<h2>Основано на ваших интересах</h2>
-				</div>
-				<div class="list">
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item1.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item2.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item3.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item1.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item2.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item3.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item1.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item2.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item3.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item1.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item2.png" class="image">
-						<a class="play"></a>
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item3.png" class="image">
-						<a class="play"></a>
-					</div>
-				</div>
-			</div>
-			<div class="index-catalog-block">
-				<div class="wrap">
-					<h2>Основано на ваших интересах</h2>
-				</div>
-				<div class="list">
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item1.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item2.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item3.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item1.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item2.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item3.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item1.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item2.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item3.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item1.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item2.png" class="image">
-					</div>
-					<div class="item">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item3.png" class="image">
-					</div>
-				</div>
-			</div>
-			<div class="index-catalog-block">
-				<div class="wrap">
-					<h2>Сериалы на любой вкус</h2>
-				</div>
-				<div class="list">
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item7.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item8.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item9.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item7.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item8.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item9.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item7.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item8.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item9.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item7.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item8.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item9.png" class="image">
-					</div>
-				</div>
-			</div>
-			<div class="index-catalog-block">
-				<div class="wrap">
-					<h2>Топ 20 фильмов</h2>
-				</div>
-				<div class="list">
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item10.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item11.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item12.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item10.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item11.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item12.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item10.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item11.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item12.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item10.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item11.png" class="image">
-					</div>
-					<div class="item small">
-						<img src="img/platform.svg" class="platform">
-						<img src="img/item12.png" class="image">
-					</div>
-				</div>
-			</div>
+			
 		</main>
 	</div>
 </body>

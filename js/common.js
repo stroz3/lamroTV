@@ -1,44 +1,63 @@
-const indexCatalogBlockSlider = {
-	slidesToShow: 5,
-	slidesToScroll: 1,
-	infinite: true,
-	lazyLoad: 'ondemand',
-	responsive: [
-		{
-		breakpoint: 1430,
-		settings: {
-			slidesToShow: 5
-		}
-		},
-		{
-			breakpoint: 1200,
-			settings: {
-			slidesToShow: 4
-			}
-		},
-		{
-		breakpoint: 992,
-		settings: {
-			// centerMode: true,
-			slidesToShow: 3
-		}
-		},
-		{
-		breakpoint: 768,
-		settings: {
-			// centerMode: true,
-			slidesToShow: 2
-		}
-		},
-		{
-		breakpoint: 576,
-		settings: {
-			// centerMode: true,
-			slidesToShow: 1
-		}
-		}
-	]
-}
+const swiperIndexCatalogConfig = {
+	slidesPerView: 5,
+	lazy: {
+	  loadOnTransitionStart: true,
+	},
+	navigation: {
+	  nextEl: ".slick-next", 
+	  prevEl: ".slick-prev",
+	},
+	loop: true,
+	freeMode: true,
+	breakpoints: {
+	  1600: { slidesPerView: 6 },
+	  1430: { slidesPerView: 5 },
+	  1200: { slidesPerView: 4 },
+	  992: { slidesPerView: 3 },
+	  768: { slidesPerView: 2 },
+	  320: { slidesPerView: 1 },
+	},
+  };
+  
+  // Функция для инициализации слайдеров
+  function initializeSliders() {
+	$('.index-catalog-block').each(function () {
+	  const block = $(this);
+	  const sliderWrapper = block.find('.slider-wrapp');
+	  const nextEl = block.find('.slick-next');
+	  const prevEl = block.find('.slick-prev');
+	  const slider = block;
+  
+	  // Копируем базовую конфигурацию
+	  let config = { ...swiperIndexCatalogConfig };
+  
+	  // Если кнопок навигации нет, отключаем их в конфигурации
+	  if (nextEl.length === 0 || prevEl.length === 0) {
+		config.navigation = false;
+	  } else {
+		config.navigation = {
+		  nextEl: nextEl[0], // Передаем DOM-элемент
+		  prevEl: prevEl[0],
+		};
+	  }
+  
+	  // Инициализируем слайдер
+	  let swiperInstance = new Swiper(sliderWrapper[0], config);
+  
+	  // Логика переключения между слайдером и сеткой
+	  if (slider.hasClass('grid-view')) {
+		swiperInstance.destroy(true, true);
+		sliderWrapper.find('.swiper-next, .swiper-prev').css('display', 'none');
+		sliderWrapper.addClass('wrap');
+	  } else {
+		sliderWrapper.find('.swiper-next, .swiper-prev').css('display', 'block');
+		sliderWrapper.removeClass('wrap');
+	  }
+  
+	  // Сохраняем экземпляр слайдера в data-атрибуте
+	  slider.data('swiper', swiperInstance);
+	});
+  }
 
 
 $(document).on('mouseup', function (e){
@@ -121,7 +140,8 @@ $(document).ready(function () {
 		},150)
 	}
 
-
+	initializeSliders();
+	
 	$(
 		function () {
 			$(".toggle-button").click(function () {		
@@ -230,22 +250,37 @@ $(document).ready(function () {
 
 
 
+
+
+
 $(function(){
-	$('.index-catalog-block .top-button').click(function() {
-		var container = $(this).closest(".index-catalog-block"); // Найти родительский контейнер
-    	var slider = container.find(".list"); // Найти слайдер внутри контейнера
-    	var wrapperSlide = container.find('.slider-wrapp'); // Найти слайдер внутри контейнера		
+	
+
+
+	$('.index-catalog-block .top-button').click(function () {
+		const container = $(this).closest('.index-catalog-block');
+		const slider = container.find('.list')[0]; // DOM-элемент
+		const wrapperSlide = container.find('.slider-wrapp');
+		let swiperInstance = container.data('swiper');
 		$(this).toggleClass('active');
-		if (slider.hasClass("slick-initialized")) {
-			// Отключаем слайдер и показываем все слайды
-			slider.slick('unslick'); // выключаем slick
-			slider.addClass('grid-view'); // добавляем класс для сетки
-			wrapperSlide.addClass('wrap'); // добавляем класс для сетки
-		  } else {
-			slider.removeClass('grid-view');
-			wrapperSlide.removeClass('wrap')
-			slider.slick(indexCatalogBlockSlider);
-		  }
+	
+		if (slider.classList.contains('grid-view')) {
+			// Включаем слайдер
+			slider.classList.remove('grid-view');
+			wrapperSlide.removeClass('wrap');
+			$('.slider-wrapp .slick-next, .slider-wrapp .slick-prev').css('display', 'block')
+			swiperInstance = new Swiper(wrapperSlide[0], swiperIndexCatalogConfig);
+			container.data('swiper', swiperInstance)
+		} else {
+			// Отключаем слайдер
+			if (swiperInstance) {
+				swiperInstance.destroy(true, true);
+			  }
+			$('.slider-wrapp .slick-next, .slider-wrapp .slick-prev').css('display', 'none')
+			indexCatalogBlockSlider = null;
+			slider.classList.add('grid-view');
+			wrapperSlide.addClass('wrap');
+		}
 	});
 	$('.index-slider-nav .select .link').click(function() {
 		$('.index-slider-nav .select .link').toggleClass('active');
@@ -313,7 +348,9 @@ $(function(){
 		autoplaySpeed: 5000,
 		adaptiveHeight: true
 	}).closest('.index-page-slider').css('opacity', '1')
-	$('.index-catalog-block .list').slick(indexCatalogBlockSlider).closest('.index-catalog-block .list').css('opacity', '1');
+
+	
+	
 	$('.slider-for').slick({
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
@@ -321,6 +358,7 @@ $(function(){
 	  fade: true,
 	  asNavFor: '.slider-nav'
 	});
+	
 	$('.slider-nav').slick({
 	  slidesToShow: 14,
 	  slidesToScroll: 1,
@@ -371,5 +409,6 @@ $(function(){
 	    ]
 	}).closest('.slider-nav').css('opacity', '1');
 });
+
 
 
