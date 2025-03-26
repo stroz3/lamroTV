@@ -1626,6 +1626,7 @@ button {
 }
 .serial-page .main-block .buttons {
   padding-top: 184px;
+  display: flex;
 }
 .serial-page .main-block .buttons button {
   width: 256px;
@@ -1653,6 +1654,32 @@ button {
 .serial-page .main-block .buttons button.other:hover {
   box-shadow: none;
   background: #334a4a;
+}
+.serial-page .main-block .buttons button img {
+  width: 30px;
+  height: 30px;
+}
+.serial-page .main-block .buttons button.btn-favorite {
+  display: flex;
+  align-items: center;
+  width: 75px;
+  gap: 20px;
+  overflow: hidden;
+}
+.serial-page .main-block .buttons button.btn-favorite p {
+  color: white;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  margin: 0;
+  font-size: 18px;
+  width: 100%;
+}
+.serial-page .main-block .buttons button.btn-favorite:hover {
+  width: 330px;
+}
+.serial-page .main-block .buttons button.btn-favorite:hover p {
+  opacity: 1;
 }
 .serial-page .main-block .buttons button:hover {
   box-shadow: 0px 0px 22.8px 0px rgba(164, 213, 161, 0.6);
@@ -2101,7 +2128,6 @@ button {
 }
 .tv-page .video {
   overflow-y: auto;
-  align-self: flex-start;
   width: 39%;
 }
 .tv-page .video .player {
@@ -2349,6 +2375,7 @@ button {
 }
 .tv-page .item .image {
   width: 280px;
+  max-height: 300px;
   border-radius: 8px;
   position: relative;
 }
@@ -3442,7 +3469,8 @@ button {
     stroke: white ;
   }
   .flex-slider-for {
-    height: calc(100vh - 100px);
+    height: 1200px;
+    flex-wrap: nowrap;
     flex-direction: column;
   }
   .index-page-slider .item {

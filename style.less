@@ -1490,6 +1490,7 @@ button{
 		}
 		.buttons {
 			padding-top: 184px;
+			display: flex;
 			button {
 				width: 256px;
 				height: 70px;
@@ -1514,6 +1515,32 @@ button{
 					&:hover {
 						box-shadow: none;
 						background: rgb(51, 74, 74);
+					}
+				}
+				img{
+					width: 30px;
+					height: 30px;
+				}
+				&.btn-favorite{
+					display: flex;
+					align-items: center;
+					width: 75px;
+					gap: 20px;
+					overflow: hidden;
+					p{	
+						color: white;
+						opacity: 0;
+						white-space: nowrap;
+						transition: opacity 0.3s ease;
+						margin: 0;
+						font-size: 18px;
+						width: 100%;
+					}
+					&:hover{
+						width: 330px;
+						p{
+							opacity: 1;
+						}
 					}
 				}
 				&:hover {
@@ -1978,7 +2005,7 @@ button{
 	}
 	.video {
 		overflow-y: auto;
-		align-self: flex-start;
+		// align-self: flex-start;
 		width: 39%;
 		.player {
 			.rel;
@@ -2212,6 +2239,7 @@ button{
 		}
 		.image {
 			width: 280px;
+			max-height: 300px;
 			border-radius: 8px;
 			.rel;
 			&:hover {
@@ -3278,7 +3306,8 @@ button{
 		}
 	}
 	.flex-slider-for{
-		height: calc(100vh - 100px);
+		height: 1200px;
+		flex-wrap: nowrap;
 		flex-direction: column;
 	}
 	// .index-page-slider{height: 900px;}
