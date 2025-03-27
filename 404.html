@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://lamro.tv/css/style.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="slick.css">
+</head>
+<style>
+    * {
+  box-sizing: border-box;
+}
+    .not-found-page {
+	display: flex;
+	align-items: center;
+	position: relative;
+    height: 100%;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+.not-found-block:first-child {
+		margin-left: 70px;
+}
+.not-found-logo {
+	width: 110px;
+	height: 65px;
+}
+.not-found-logo img{
+    width: 100%;
+		height: 100%;
+		object-fit: cover;
+}
+.not-found-logo-second{
+	display: none;
+}
+.not-found-text {
+	margin: 100px 0 200px;
+	position: relative;
+	z-index: 10;
+	
+	
+	
+}
+.not-found-text h2{
+		color: var(--White, #FFF);
+		font-family: Golos;
+		font-size: 58px;
+		font-weight: 600;
+		line-height: 106%; 
+	}
+    .not-found-text p{
+		color: var(--Txt, #737D7D);
+		font-family: "Source Sans Pro";
+		font-size: 20px;
+		font-weight: 400;
+        width: 500px;
+	}
+    .not-found-text button{
+		border-radius: 10px;
+		border: 3px solid rgba(255, 255, 255, 0.15);
+		background: #81BE70;
+		padding: 20px 40px;
+		color: var(--White, #FFF);
+		text-align: center;
+		font-family: Golos;
+		font-size: 18px;
+		font-weight: 600;
+		text-transform: uppercase;
+		transition: 0.3s ease;
+		margin-top: 60px;
+	}
+    .not-found-text button:hover{
+			box-shadow: 0px 0px 22.8px 0px rgba(164, 213, 161, 0.6);
+		}
+.not-found-license {
+	color: var(--Txt, #737D7D);
+	font-family: "Source Sans Pro";
+	font-size: 20px;
+	font-weight: 400;
+}
+@media (max-width: 991px){
+    
+    .not-found-page{
+        height: calc(100vh + 110px);
+		flex-direction: column-reverse;
+        justify-content: flex-end;
+		padding: 20px 20px;
+	}
+	.not-found-logo{
+		display: none;
+	}
+	.not-found-text {
+		margin: 10px 0 100px;
+	}
+	.not-found-logo-second{
+		display: block;
+	}
+	.not-found-block button{
+			width: 100%;
+	}
+    .not-found-text p{
+        width: 100%;
+    }
+	.not-found-block:first-child{
+		margin-left: 0;
+	}
+}
+@media (max-width: 767px){
+    .not-found-text h2{
+        font-size: 26px;
+    }
+    p{
+        margin-top: 10px;
+        font-size: 16px;
+    }
+}
+</style>
+<body >
+    <div class="not-found-page">
+        <div class="not-found-block">
+            <div class="not-found-logo">
+                <img src="img/logo.svg" alt="">
+            </div>
+            <div class="not-found-text">
+                <h2>
+                    Страница не найдена…
+                </h2>
+                <p>
+                    О, нееет, тут всё такое старое,  нас кажется телепортировало в прошлое, тут даже экран черно-белый, но кнопка ниже возвращает всё обратно
+                </p>
+                <button>
+                    Назад в будущее
+                </button>
+            </div>
+            <p class="not-found-license">© 2025 Lamro.TV</p>
+        </div>
+        <div class="not-found-block">
+            <div class="not-found-logo not-found-logo-second">
+                <img src="img/logo.svg" alt="">
+            </div>
+            <img src="img/404Img.png" alt="">
+        </div>
+    <span class="ellipse-green" style="bottom: 0%; left: -20%; width: 50%;
+	height: 50%;"></span>
+    <span class="ellipse-green" style="bottom: 0%; right: 20%; width: 50%;
+	height: 50%;"></span>
+    <span class="ellipse-white" style="bottom: 0%; right: -30%; width: 50%;
+	height: 50%;"></span>
+    <span class="ellipse-white" style="top: 0%; left: 20%; width: 50%;
+	height: 50%;"></span>
+    </div>
+</body>
+</html>
